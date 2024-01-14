@@ -1,24 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+body{
+    overflow-x: hidden;
+    border: #476e9e 5px solid;
+    background-color: #161616;
+}
+
 .phrase{
-    width: 90vw;
+    width: 96vw;
     transform: translateX(-50%);
     margin-left: 50vw;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .select {
     position: relative;
     display: inline-block;
     margin-bottom: 15px;
+    color: #ffffff;
 }    .select select {
         font-family: 'Arial';
         display: inline-block;
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 10px 12px;
         outline: 0;
         border: 0px solid #000000;
-        border-radius: 12px;
-        background: #e6e6e6;
-        color: #000000;
+        border-radius: 8px;
+        background: #303030;
+        color: #ffffff;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -28,8 +41,7 @@
         }
         .select select:hover,
         .select select:focus {
-            color: #000000;
-            background: #cccccc;
+            background: #303030;
         }
         .select select:disabled {
             opacity: 0.5;
@@ -57,27 +69,27 @@
 }
 
 .bloomun{
-    background-color: #edf2fb;
+    background-color: #0044E4;
 }
 
 .bloomdeux{
-    background-color: #e2eafc;
+    background-color: #003BC5;
 }
 
 .bloomtrois{
-    background-color: #d7e3fc;
+    background-color: #0032A5;
 }
 
 .bloomquatres{
-    background-color: #ccdbfd;
+    background-color: #002886;
 }
 
 .bloomcinq{
-    background-color: #c1d3fe;
+    background-color: #001F67;
 }
 
 .bloomsix{
-    background-color: #b6ccfe;
+    background-color: #001546;
 }
 
 .supportvisuel{
@@ -96,6 +108,90 @@
     background-color: #ff8811;
 }
 
-#resultat{
+#resultat, #resultatText{
+    margin-top: 2vh;
     font-size: 20px;
+}
+
+.bloomy{
+    text-transform: lowercase;
+}
+
+.generer {
+    margin-top: 1vh;
+    margin-left: 45vw;
+    transform: translateX(-50%);
+	box-shadow: 3px 4px 5px 2px #1a1a1a;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:14px;
+	padding:4px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.generer:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.generer:active {
+	position:relative;
+	top:1px;
+}
+
+.css-input {
+    padding: 5px;
+    font-size: 16px;
+    border-width: 0px;
+    border-color: #d7d7d7;
+    background-color: #303030;
+    color: #ffffff;
+    border-style: solid;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px rgba(255,255,255,.75);
+    text-shadow: 0px 0px 0px rgba(255,255,255,.0);
+}
+.css-input:focus {
+    outline:none;
+}
+
+.back {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:8px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.back:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.back:active {
+	position:relative;
+	top:1px;
+}
+
+.zoneback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#resultat{
+    margin-bottom: 3%;
 }
