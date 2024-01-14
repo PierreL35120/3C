@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic de territoire</title>
+    <link rel="stylesheet" href="styleDiag.css">
+</head>
+<body>
+    <h1>Diagnostic de territoire</h1>
+    <h3>Commanditeur</h3>
+    <input onchange="diagresume()" id="commanditeur" placeholder="Qui est à l'intiative ?">
+    <select onchange="diagresume()" id="commande">
+        <option>Commande Externe</option>
+        <option>Commande Interne</option>
+    </select> 
+    <input type="checkbox">Financeur ?
+    <input type="checkbox">Partenaire ?
+    <p>Le commanditeur est la personne qui vous demande d'effectuer ce diagnostic de territoire.</p>
+
+    <h3>Pourquoi un diagnostic ?</h3>
+    <textarea onchange="diagresume()" id="pourquoiobjectif" rows ="5" cols="60" placeholder="Objectifs de la demande"></textarea>
+    <textarea onchange="diagresume()" id="pourquoiresultat" rows ="5" cols="60" placeholder="Résultats attendus"></textarea>
+    <textarea id="pourquoipourquoi" rows ="5" cols="60" placeholder="Pourquoi il y'a cette demande ?"></textarea>
+    <textarea id="pourquoicontexte" rows ="5" cols="60" placeholder="Contexte de la demande"></textarea>
+    <textarea id="pourquoivigilance" rows ="5" cols="60" placeholder="Point de vigilance"></textarea>
+    <p>Ce sont les questions que vous devez vous posez quand vous crée un diagnostic de territoire. Posez vous ses 5 questions : <br>
+    -Objectifs de la demande : Quel est le but de cette demande ? Qu'est-ce que vous voulez vérifier, obtenir quels informations ? <br> 
+    -Résultats attendus : Mettez ici ce que vous espérez obtenir comme résultat vis à vis de ce diagnostic.<br>
+    -Pourquoi il y'a cette demande ? Pour quel raison avez vous créez ce diagnostic ?<br>
+    -Contexte de la demande : <br>
+    -Point de vigilance : Rentrez ici les potentiels danger qui pourrais contraindre votre objectif ?
+</p>
+
+    <h3>Où ?</h3>
+    <select onchange="diagresume()" id="region">
+        <option>Auvergne-Rhône-Alpes</option>
+        <option>Bourgogne-Franche-Comté</option>
+        <option>Bretagne</option>
+        <option>Centre-Val de Loire</option>
+        <option>Corse</option>
+        <option>Grand Est</option>
+        <option>Hauts-de-France</option>
+        <option>Ile-de-France</option>
+        <option>Normandie</option>
+        <option>Nouvelle-Aquitaine</option>
+        <option>Occitanie</option>
+        <option>Pays de la Loire</option>
+        <option>Provence Alpes Côte d'Azur</option>
+    </select>
+    <input onchange="diagresume()" id="departement" placeholder="Département">
+    <input onchange="diagresume()" id="cp" placeholder="Code Postal">
+    <input onchange="diagresume()" id="commune" placeholder="Commune">
+
+    <h3>Publique ?</h3>
+    <input onchange="diagresume()" id="pubnbr" placeholder="Nombre d'habitants">
+    <input onchange="diagresume()" id="pubevo" placeholder="% d'évolution démographique">
+    <input onchange="diagresume()" id="pubchom" placeholder="% de chomage">
+    <select onchange="diagresume()" id="pubage">
+        <option>Public Cible</option>
+        <option>Famille</option>
+        <option>Enfants</option>
+        <option>Ados</option>
+        <option>Jeune Adultes</option>
+        <option>Adultes</option>
+        <option>Seniors</option>
+    </select> 
+    <select onchange="diagresume()" id="secteur">
+        <option>Primaire</option>
+        <option>Secondaire</option>
+        <option>Tertiaire</option>
+    </select>
+
+    <div id="diagresume"></div>
+
+    <div class="zoneback">
+        <a href="index.html" class="back">Retour</a>
+    </div>    
+
+    <script>
+            function diagresume() {
+      var commanditeur = document.getElementById("commanditeur").value;
+      var commande = document.getElementById("commande").value;
+      var pourquoiobjectif = document.getElementById("pourquoiobjectif").value;
+      var pourquoiresultat = document.getElementById("pourquoiresultat").value;
+      var commune = document.getElementById("commune").value;
+      var cp = document.getElementById("cp").value;
+      var region = document.getElementById("region").value;
+      var departement = document.getElementById("departement").value;
+      var pubage = document.getElementById("pubage").value;
+      var secteur = document.getElementById("secteur").value;
+      var pubnbr = document.getElementById("pubnbr").value;
+      var pubchom = document.getElementById("pubchom").value;
+
+      
+      var phrase = `<span>Suite à la demande de ` + commanditeur + ` dans cadre d'une ` + commande + `. <br>` +
+        `Nous avons défini les objectifs suivants :` + pourquoiobjectif +  `<br>` +
+        `Nous espérions comme résultats :` + pourquoiresultat + "<br>" +
+        `Niveau géographie, nous visons la commune de ` + commune + " " + cp + `dans le département de ` + departement +`situer en`+ " " + region + ". <br>" +
+        `Dans la ville de ` + commune + " "+ `nous visons les ` + pubage + ". <br>" +
+        `La ville de ` + commune + `est surtout spécialisé dans le secteur ` + secteur +
+        `. Il y'a ` + pubnbr + `habitants, avec un taux de chomage de ` + pubchom + "%." 
+        ;
+      
+      document.getElementById("diagresume").innerHTML = phrase;
+    }
+    </script>
+
+</body>
+</html>
