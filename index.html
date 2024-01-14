@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/Shaaaaaaark.svg" type="image/x-icon">
     <title>Les 3C</title>
 </head>
 <body>
     <div class="phrase select">
     <span>A la fin</span> 
-    <select id="format">
+    <select onchange="genererPhrase()" id="format">
         <option>de l'atelier</option>
         <option>de la séquence</option>
         <option>du module</option>
     </select>
       <span> l'apprenant sera capable</span>
-      <select id="pronom">
-        <option>de</option>
+      <select onchange="genererPhrase()" id="pronom">
+        <option>de </option>
         <option>d'</option>
       </select>
       
-      <select class="bloom" id="bloomy">
+      <select onchange="genererPhrase()" class="bloom" id="bloomy">
         <option>Verbe d'action</option>
         <optgroup label="Niveau 1 - APPRENDRE" class="bloomun">
         <option>Acquérir</option>
@@ -345,8 +346,9 @@
     </optgroup>
       </select>
 
-    <select id="support">   
+    <select onchange="genererPhrase()" id="support">   
         <option>Contenu</option>
+        <option></option>
     <optgroup label="Support visuel" class="supportvisuel">         
         <option>un graphique</option>
         <option>un dessin</option>
@@ -381,45 +383,72 @@
         <option>une chanson</option>
         <option>une histoire</option>
     </optgroup>
+
+    <optgroup label="Logiciel" class="supportecrit">        
+        <option>une interface</option>
+        <option>un menu</option>
+    </optgroup>
     </select>
 
-    <input id="inputun"></input>
+    <input onchange="genererPhrase()" class="css-input" placeholder="Sujet" id="inputun"></input>    
     
-    avec l'aide     
-    
-    <select id="aide">
-        <option>de rien</option>
-        <option>de son cours</option>
-        <option>de son formateur</option>
-        <option>de ses collégues</option>
-        <option>d'internet</option>
-        <option>de Wikipédia</option>
-        <option>de journaux ou revues</option>
-        <option>de livres</option>
-        <option>d'experts</option>
+    <select onchange="genererPhrase()" id="aide">
+        <option>Aide utilisée</option>
+        <option></option>
+        <option>avec l'aide de son cours</option>
+        <option>avec l'aide de son formateur</option>
+        <option>avec l'aide de ses collégues</option>
+        <option>avec l'aide d'internet</option>
+        <option>avec l'aide de Wikipédia</option>
+        <option>avec l'aide de journaux ou revues</option>
+        <option>avec l'aide de livres</option>
+        <option>avec l'aide d'experts</option>
     </select>
     
     <span>en</span>
     
-    <select id="duree">
-    <option>Durée</option>
-    <option>1h</option>
-    <option>2h</option>
-    <option>3h</option>
+    <select onchange="genererPhrase()" id="dureeh">
+        <option>Durée</option>
+        <option></option>
+        <option>1h</option>
+        <option>2h</option>
+        <option>3h</option>
      </select>   
+
+    <select onchange="genererPhrase()" id="dureem">
+        <option>Durée</option>
+        <option></option>
+        <option>15m</option>
+        <option>30m</option>
+        <option>45m</option>
+    </select>   
 
      <span>et en</span>
 
-    <select id="groupe">
+    <select onchange="genererPhrase()" id="groupe">
      <option>autonomie</option>
      <option>duo</option>
      <option>groupe</option>
     </select>
 
-<button onclick="genererPhrase()">Générer Phrase</button>
+<p id="resultat">A la fin de l'atelier l'apprenant sera capable de Verbe d'action Contenu Sujet Aide utilisée en DuréeDurée et en autonomie.</p>
 
-<p id="resultat"></p>
+<span>A la fin de</span>
+<input onchange="genererPhraseText()" class="css-input" placeholder="Format" id="FormatText"></input>
+<span>l'apprenant sera capable de</span>    
+<input onchange="genererPhraseText()" class="css-input" placeholder="Verbe d'action" id="VerbeText"></input>    
+<input onchange="genererPhraseText()" class="css-input" placeholder="Contenue" id="ContenueText"></input>    
+<input onchange="genererPhraseText()" class="css-input" placeholder="Sujet" id="SujetText"></input>  
+<input onchange="genererPhraseText()" class="css-input" placeholder="Aide" id="AideText"></input>    
+<input onchange="genererPhraseText()" class="css-input" placeholder="Temps" id="TempsText"></input>    
+<span>Et en</span>
+<input onchange="genererPhraseText()" class="css-input" placeholder="Seul ou Groupe ?" id="GroupeText"></input>    
 
+<p id="resultatText">A la fin de l'atelier l'apprenant sera capable de Verbe d'action Contenu Sujet Aide utilisée en DuréeDurée et en autonomie.</p>
+</div>
+
+<div class="zoneback">
+    <a href="index.html" class="back">Retour</a>
 </div>
 
 <script>
@@ -430,12 +459,29 @@
       var support = document.getElementById("support").value;
       var inputun = document.getElementById("inputun").value;
       var aide = document.getElementById("aide").value;
-      var duree = document.getElementById("duree").value;
+      var dureeh = document.getElementById("dureeh").value;
+      var dureem = document.getElementById("dureem").value;
       var groupe = document.getElementById("groupe").value;
       
-      var phrase = "A la fin " + format + " " + "l'apprenant sera capable " + pronom + " " + bloom + " " + support + " " +  inputun + " avec l'aide " + aide + " en " + duree + " et en " + groupe + ".";
+      var phrase = "A la fin " + format + " " + "l'apprenant sera capable " + pronom + `<span class="bloomy">` + bloom + "</span>"  + " " + support + " " +  inputun + " " + aide + " en " + dureeh + dureem + " et en " + groupe + ".";
       
       document.getElementById("resultat").innerHTML = phrase;
+    }
+
+    function genererPhraseText() {
+      var FormatText = document.getElementById("FormatText").value;
+      var VerbeText = document.getElementById("VerbeText").value;
+      var ContenueText = document.getElementById("ContenueText").value;
+      var SujetText = document.getElementById("SujetText").value;
+      var AideText = document.getElementById("AideText").value;
+      var TempsText = document.getElementById("TempsText").value;
+      var GroupeText = document.getElementById("GroupeText").value;
+      var dureem = document.getElementById("dureem").value;
+      var groupe = document.getElementById("groupe").value;
+      
+      var phrase = "A la fin " + FormatText + " " + "l'apprenant sera capable " + VerbeText + ContenueText + " " + SujetText + " " +  AideText + " " + TempsText + " en " + GroupeText + ".";
+      
+      document.getElementById("resultatText").innerHTML = phrase;
     }
 </script>
 </body>
