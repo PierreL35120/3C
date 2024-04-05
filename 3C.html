@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Shaaaaaaark.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
     <title>Les 3C</title>
 </head>
 <body>
+    <div class="zoneback">
+        <a href="index.html" class="back">Retour</a>
+    </div>    
     <div class="phrase select">
     <span>A la fin</span> 
     <select onchange="genererPhrase()" id="format">
@@ -403,6 +406,8 @@
         <option>avec l'aide de journaux ou revues</option>
         <option>avec l'aide de livres</option>
         <option>avec l'aide d'experts</option>
+        <option>avec l'aide du médiateur numérique</option>
+        <option>avec l'aide des médiateurs numériques</option>
     </select>
     
     <span>en</span>
@@ -433,6 +438,10 @@
 
 <p id="resultat">A la fin de l'atelier l'apprenant sera capable de Verbe d'action Contenu Sujet Aide utilisée en DuréeDurée et en autonomie.</p>
 
+<div class="transition">
+    <img src="./logo.png">
+</div>
+
 <span>A la fin de</span>
 <input onchange="genererPhraseText()" class="css-input" placeholder="Format" id="FormatText"></input>
 <span>l'apprenant sera capable de</span>    
@@ -445,10 +454,6 @@
 <input onchange="genererPhraseText()" class="css-input" placeholder="Seul ou Groupe ?" id="GroupeText"></input>    
 
 <p id="resultatText">A la fin de l'atelier l'apprenant sera capable de Verbe d'action Contenu Sujet Aide utilisée en DuréeDurée et en autonomie.</p>
-</div>
-
-<div class="zoneback">
-    <a href="index.html" class="back">Retour</a>
 </div>
 
 <script>
