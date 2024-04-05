@@ -7,7 +7,7 @@
 body{
     overflow-x: hidden;
     border: #476e9e 5px solid;
-    background-color: #161616;
+    background-color: #488CAC;
 }
 
 .phrase{
@@ -30,18 +30,20 @@ body{
         outline: 0;
         border: 0px solid #000000;
         border-radius: 8px;
-        background: #303030;
+        background: #484AAD;
         color: #ffffff;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
+        margin-bottom: 4px;
+
     }
         .select select::-ms-expand {
             display: none;
         }
         .select select:hover,
         .select select:focus {
-            background: #303030;
+            background: #484AAD;
         }
         .select select:disabled {
             opacity: 0.5;
@@ -68,28 +70,32 @@ body{
     background-color: transparent;
 }
 
+optgroup{
+    color: #000000;
+}
+
 .bloomun{
-    background-color: #0044E4;
+    background-color: #35A9CA;
 }
 
 .bloomdeux{
-    background-color: #003BC5;
+    background-color: #4787C2;
 }
 
 .bloomtrois{
-    background-color: #0032A5;
+    background-color: #866EA9;
 }
 
 .bloomquatres{
-    background-color: #002886;
+    background-color: #99B44F;
 }
 
 .bloomcinq{
-    background-color: #001F67;
+    background-color: #F59B39;
 }
 
 .bloomsix{
-    background-color: #001546;
+    background-color: #D05D47;
 }
 
 .supportvisuel{
@@ -111,6 +117,7 @@ body{
 #resultat, #resultatText{
     margin-top: 2vh;
     font-size: 20px;
+    color:white;
 }
 
 .bloomy{
@@ -128,7 +135,7 @@ body{
 	border:1px solid #000000;
 	display:inline-block;
 	cursor:pointer;
-	color:#000000;
+    color: #ffffff;
 	font-family:Arial;
 	font-size:14px;
 	padding:4px 15px;
@@ -149,20 +156,25 @@ body{
     font-size: 16px;
     border-width: 0px;
     border-color: #d7d7d7;
-    background-color: #303030;
+    background-color: #484AAD;
     color: #ffffff;
     border-style: solid;
     border-radius: 8px;
     box-shadow: 0px 0px 2px rgba(255,255,255,.75);
-    text-shadow: 0px 0px 0px rgba(255,255,255,.0);
+    text-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
 }
+
+.css-input::-webkit-input-placeholder{
+    color: white;
+}
+
 .css-input:focus {
     outline:none;
 }
 
 .back {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background:linear-gradient(to bottom, #484AAD 100%, #488CAC 100%);
 	background-color:#7892c2;
 	border-radius:10px;
 	border:1px solid #4e6096;
@@ -192,6 +204,12 @@ body{
     margin-bottom: 1%;
 }
 
-#resultat{
-    margin-bottom: 3%;
+.transition{
+    display: flex;
+    height: 30vh;
+    justify-content:center
+}
+
+.transition img{
+    height: 100%;
 }
